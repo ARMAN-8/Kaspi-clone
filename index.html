@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kaspi Clone</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!--tailwind-cdn-->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+          rel="stylesheet">
+    <!--font-awesome-cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+
+<header>
+    <!--navbar-goes-here-->
+    <nav class="bg-gray-kaspi">
+        <!--container-->
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                            aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!--
+                          Icon when menu is closed.
+
+                          Heroicon name: outline/menu
+
+                          Menu open: "hidden", Menu closed: "block"
+                        -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        <!--
+                          Icon when menu is open.
+
+                          Heroicon name: outline/x
+
+                          Menu open: "block", Menu closed: "hidden"
+                        -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex-shrink-0 flex items-center">
+
+                        <img class="block lg:hidden h-8 w-auto"
+                             src="./img/kaspi.svg" alt="Kaspi">
+
+                        <img class="block lg:block h-8 w-auto"
+                             src="./img/kaspi.svg" alt="Kaspi">
+                    </div>
+                    <div class="hidden sm:block sm:ml-6">
+                        <div class="flex space-x-4">
+                            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                            <a href="#"
+                               class="text-white hover:text-red-400 px-3 py-2 font-medium">
+                                Магазин
+                            </a>
+
+                            <a href="#"
+                               class="text-white hover:text-red-400 px-3 py-2 font-medium">
+                                Платежи
+                            </a>
+
+                            <a href="#"
+                               class="text-white hover:text-red-400 px-3 py-2 font-medium">
+                                Мой банк
+                            </a>
+
+                            <a href="#"
+                               class="text-white hover:text-red-400 px-3 py-2 font-medium">
+                                Red
+                            </a>
+
+                            <a href="#"
+                               class="text-white hover:text-red-400 px-3 py-2 font-medium">
+                                Бонус
+                            </a>
+
+                            <a href="#"
+                               class="text-white hover:text-red-400 px-3 py-2 font-medium">
+                                Гид
+                            </a>
+
+                            <a href="#"
+                               class="text-white hover:text-red-400 px-3 py-2 font-medium">
+                                Maps
+                            </a>
+
+                            <a href="#"
+                               class="text-white hover:text-red-400 px-3 py-2 font-medium">
+                                Переводы
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <div class="ml-3 relative">
+                        <div>
+                            <div>
+                                <!--map-mark-->
+                                <a href="#" class="text-white hover:text-red-400 px-3 py-2 font-medium">
+                                    <i class="fas fa-map-marker"></i>
+                                    <span class="ml-2">Алматы</span>
+                                </a>
+
+                                <span class="text-gray-200">
+                                    |
+                                </span>
+
+                                <a href="#" class="text-white hover:text-red-400 px-3 py-2 font-medium ml-4">
+                                    <i class="far fa-user"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                   aria-current="page">Dashboard</a>
+
+                <a href="#"
+                   class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+
+                <a href="#"
+                   class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+
+                <a href="#"
+                   class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+            </div>
+        </div>
+    </nav>
+    <!--/navbar-goes-here-->
+</header>
+
+<main>
+    <!--main-content-->
+    <div>
+        <!--main-page-->
+        <div class="my-6">
+            <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                <!--container-->
+                <div class="grid grid-flow-col grid-cols-3 gap-4">
+                    <div class="signInImg col-span-2">
+                        <div class="p-20 text-center space-y-6">
+                            <div class="text-white text-7xl font-bold">
+                                Мой банк
+                            </div>
+                            <div class="text-white text-3xl font-normal">
+                                Все о ваших картах, депозитах и кредитах
+                            </div>
+                            <button class="border-2 border-gray-50 bg-transparent hover:bg-white text-white hover:text-black px-10 py-4 text-xl">
+                                Войти / Зарегистрироваться
+                            </button>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <img src="./img/kaspiShop.jpg" alt="kaspi shop"/>
+                        </div>
+                        <div class="bg-yellow-400 text-center py-4 space-y-4">
+                            <div class="text-xl">
+                                Платите удобно за 1 минуту! <br>
+                                Комиссия - 0 т!
+                            </div>
+                            <div class="space-x-4 text-center">
+                                <i class="fas fa-paper-plane"></i>
+                                <i class="fas fa-paper-plane"></i>
+                                <i class="fas fa-paper-plane"></i>
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <div>
+                                <button class="border-2 border-gray-500 bg-transparent hover:bg-gray-500 text-gray-500 hover:text-white px-4 text-xl">
+                                    Все платежи
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--main-cards-->
+                <div class="main-cards space-x-3 grid grid-flow-col grid-cols-6 pt-8">
+
+                    <div class="card py-10 px-8 bg-white hover:shadow-lg text-center hover:text-red-500">
+                        <a href="#" class="space-y-4">
+                            <div>
+                                <i class="fas fa-shopping-cart fa-4x text-red-500"></i>
+                            </div>
+                            <div class="text-2xl font-medium">
+                                Магазин
+                            </div>
+                            <div class="text-base">
+                                Покупки в кредит
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card py-10 px-8 bg-white hover:shadow-lg text-center hover:text-red-500">
+                        <a href="#" class="space-y-4">
+                            <div>
+                                <i class="fas fa-shopping-cart fa-4x text-red-500"></i>
+                            </div>
+                            <div class="text-2xl font-medium">
+                                Магазин
+                            </div>
+                            <div class="text-base">
+                                Покупки в кредит
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card py-10 px-8 bg-white hover:shadow-lg text-center hover:text-red-500">
+                        <a href="#" class="space-y-4">
+                            <div>
+                                <i class="fas fa-shopping-cart fa-4x text-red-500"></i>
+                            </div>
+                            <div class="text-2xl font-medium">
+                                Магазин
+                            </div>
+                            <div class="text-base">
+                                Покупки в кредит
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card py-10 px-8 bg-white hover:shadow-lg text-center hover:text-red-500">
+                        <a href="#" class="space-y-4">
+                            <div>
+                                <i class="fas fa-shopping-cart fa-4x text-red-500"></i>
+                            </div>
+                            <div class="text-2xl font-medium">
+                                Магазин
+                            </div>
+                            <div class="text-base">
+                                Покупки в кредит
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card py-10 px-8 bg-white hover:shadow-lg text-center hover:text-red-500">
+                        <a href="#" class="space-y-4">
+                            <div>
+                                <i class="fas fa-shopping-cart fa-4x text-red-500"></i>
+                            </div>
+                            <div class="text-2xl font-medium">
+                                Магазин
+                            </div>
+                            <div class="text-base">
+                                Покупки в кредит
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="card py-10 px-8 bg-white hover:shadow-lg text-center hover:text-red-500">
+                        <a href="#" class="space-y-4">
+                            <div>
+                                <i class="fas fa-shopping-cart fa-4x text-red-500"></i>
+                            </div>
+                            <div class="text-2xl font-medium">
+                                Магазин
+                            </div>
+                            <div class="text-base">
+                                Покупки в кредит
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <!--kaspi shop-->
+                <div class="kaspi-shop my-40">
+                    <div class="text-center space-y-4 mb-12">
+                        <div class="text-5xl font-bold text-gray-800">
+                            Магазин на Kaspi.kz
+                        </div>
+                        <div class="text-2xl leading-10 text-gray-700">
+                            Выбор лучшей цены, одобрение кредита онлайн.
+                        </div>
+                    </div>
+                    <div class="cards-grid bg-white hover:shadow-lg grid grid-flow-col grid-rows-2 grid-cols-3">
+                        <div class="card-grid text-center py-6 px-auto border-r border-gray-600 border-opacity-25">
+                            <a href="#" class="hover:text-red-500">
+                                <div class="text-center flex justify-center">
+                                    <img src="./img/iphone12.png" class="" alt="iphone12"/>
+                                </div>
+                                <div class="text-lg">
+                                    Телефоны, <br> гаджеты
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-grid text-center py-6 px-auto border-t border-r border-gray-600 border-opacity-25">
+                            <a href="#" class="hover:text-red-500">
+                                <div class="text-center flex justify-center">
+                                    <img src="./img/autoProducts.png" class="" alt="autoProducts"/>
+                                </div>
+                                <div class="text-lg">
+                                    Автотовары
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-grid text-center py-6 px-auto border-r border-gray-600 border-opacity-25">
+                            <a href="#" class="hover:text-red-500">
+                                <div class="text-center flex justify-center">
+                                    <img src="./img/autoProducts.png" class="" alt="autoProducts"/>
+                                </div>
+                                <div class="text-lg">
+                                    Украшения, аксессуары
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-grid text-center py-6 px-auto border-t border-r border-gray-600 border-opacity-25">
+                            <a href="#" class="hover:text-red-500">
+                                <div class="text-center flex justify-center">
+                                    <img src="./img/computers.png" class="" alt="computers"/>
+                                </div>
+                                <div class="text-lg">
+                                    Компьютеры
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-grid text-center py-6 px-auto border-gray-600 border-opacity-25">
+                            <a href="#" class="hover:text-red-500">
+                                <div class="text-center flex justify-center">
+                                    <img src="./img/tv.png" class="" alt="tv"/>
+                                </div>
+                                <div class="text-lg">
+                                    ТВ, аудио, видео
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-grid text-center py-6 px-auto border-t border-gray-600 border-opacity-25">
+                            <a href="#" class="hover:text-red-500">
+                                <div class="text-center flex justify-center">
+                                    <img src="./img/productsForHome.png" class="" alt="productsForHome"/>
+                                </div>
+                                <div class="text-lg">
+                                    Товары для дома и дачи
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--kaspi shop-->
+                <div class="kaspi-shop my-40">
+                    <div class="text-center space-y-4 mb-12">
+                        <div class="text-5xl font-bold text-gray-800">
+                            Платежи без комиссий
+                        </div>
+                        <div class="text-2xl leading-10 text-gray-700">
+                            Оплата более 5000 услуг, за 1 минуту, не выходя из дома.
+                        </div>
+                    </div>
+                    <div class="cards-grid bg-white hover:shadow-lg grid grid-flow-col grid-cols-5 space-x-6 py-10 mb-4">
+                        <div class="card text-center space-y-2 border-r border-opacity-75">
+                            <div class="flex justify-center">
+                                <img src="./img/beeLine.png" alt="Beeline image"/>
+                            </div>
+                            <div class="text-lg">
+                                Пополнить баланс мобильного
+                            </div>
+                        </div>
+                        <div class="card text-center space-y-2 border-r border-opacity-75">
+                            <div class="flex justify-center">
+                                <img src="./img/penalties.png" alt="penalties image"/>
+                            </div>
+                            <div class="text-lg">
+                                Проверить и оплатить штраф онлайн
+                            </div>
+                        </div>
+                        <div class="card text-center space-y-2 border-r border-opacity-75">
+                            <div class="flex justify-center">
+                                <img src="./img/kazakhTelecom.png" alt="kazakhTelecom image"/>
+                            </div>
+                            <div class="text-lg">
+                                Узнать задолженность и оплатить
+                            </div>
+                        </div>
+                        <div class="card text-center space-y-2 border-r border-opacity-75">
+                            <div class="flex justify-center">
+                                <img src="./img/baby.png" alt="baby image"/>
+                            </div>
+                            <div class="text-lg">
+                                Оплатить <br> детский сад
+                            </div>
+                        </div>
+                        <div class="card text-center space-y-2">
+                            <div class="flex justify-center">
+                                <img src="./img/taxes.png" alt="taxes image"/>
+                            </div>
+                            <div class="text-lg">
+                                Оплатить налоги по всей РК
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5">
+                        <a href="#" class="flex justify-between hover:text-red-500">
+                            <div></div>
+                            <div class=" text-xl">
+                                Все платежи
+                            </div>
+                            <div class="">
+                                <i class="fas fa-chevron-right text-gray-500"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer></footer>
+
+</body>
+</html>
