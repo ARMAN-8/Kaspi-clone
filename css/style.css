@@ -13,3 +13,10 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.kaspiRed {
+    background-image: url('../img/kaspiRed.png');
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
